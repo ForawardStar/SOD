@@ -191,7 +191,7 @@ def adjust_learning_rate(args, optimizer, epoch, iter, max_batches):
 
 def train_validate_saliency(args):
     # load the model
-    model = net.EDN(arch=args.arch, pretrained=True, freeze_s1=args.freeze_s1)
+    model = net.SOD(arch=args.arch, pretrained=True, freeze_s1=args.freeze_s1)
 
     args.savedir = args.savedir + '/'
     # create the directory if not exist
