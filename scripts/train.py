@@ -248,8 +248,8 @@ def train_validate_saliency(args):
         myTransforms.ToTensor(BGR=False)
     ])
 
-    train_names = ["DUTS-TR", "DUTS-TE", "DUT-OMRON", "HKU-IS", "ECSSD", "SOD", "PASCAL-S"]
-    val_names = ["DUTS-TE", "DUT-OMRON", "HKU-IS", "ECSSD", "SOD", "PASCAL-S"]
+    train_names = ["DUTS-TR"]
+    val_names = ["DUTS-TE", "DUT-OMRON", "HKU-IS", "ECSSD", "PASCAL-S"]
     
     trainLoader_main = torch.utils.data.DataLoader(
         Dataset(args.data_dir, train_names, transform=trainDataset_main),
