@@ -10,7 +10,7 @@ from models.MobileNetV2 import mobilenetv2
 try:
     from models.p2t import p2t_tiny, p2t_small
 except:
-    print("EDN-P2T code is not loaded, please check the installation of PyTorch>=1.7, timm>=0.3.2!")
+    print(" code is not loaded, please check the installation of PyTorch>=1.7, timm>=0.3.2!")
 
 class MyConv2D(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, stride=1):
@@ -175,11 +175,11 @@ def conv1x1(in_planes, out_planes, stride=1):
     return nn.Conv2d(in_planes, out_planes, kernel_size=1, stride=stride, bias=False)
 
 
-class EDN(nn.Module):
+class SOD(nn.Module):
     def __init__(self, arch='mobilenetv2', pretrained=True, use_carafe=True,
                  enc_channels=[64, 128, 256, 512, 512, 256, 256],
                  dec_channels=[32, 64, 128, 128, 256, 256, 256], freeze_s1=False):
-        super(EDN, self).__init__()
+        super(SOD, self).__init__()
         
         self.arch = arch
         self.backbone_mobile = eval("mobilenetv2")(pretrained)
