@@ -62,7 +62,7 @@ def main(args, file_list):
             image_list.append(args.data_dir + '/' + line_arr[0].strip())
             label_list.append(args.data_dir + '/' + line_arr[1].strip())
 
-    model = net.EDN(arch=args.arch)
+    model = net.SOD(arch=args.arch)
     if not osp.isfile(args.pretrained):
         print('Pre-trained model file does not exist...')
         exit(-1)
@@ -90,7 +90,7 @@ def main(args, file_list):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--arch', default='vgg16', help='the backbone name of EDN, vgg16, resnet50, or mobilenetv2')
+    parser.add_argument('--arch', default='vgg16', help='the backbone name of vgg16, resnet50, or mobilenetv2')
     parser.add_argument('--data_dir', default="./data", help='Data directory')
     parser.add_argument('--width', type=int, default=384, help='Width of RGB image')
     parser.add_argument('--height', type=int, default=384, help='Height of RGB image')
@@ -115,7 +115,6 @@ if __name__ == '__main__':
         raise NotImplementedError("recognized unknown backbone given the model_path")
     
     if 'LiteEX' in args.pretrained:
-        # EDN-LiteEX
         args.width = 224
         args.height = 224
     
