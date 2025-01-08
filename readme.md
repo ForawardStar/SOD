@@ -55,7 +55,7 @@ python demo.py
 
 ## Train
 
-If you cannot run `bash scripts/prepare_data.sh`, please first download the imagenet pretrained models and put them to `pretrained` folder:
+Before training, please first download the imagenet pretrained parameters, and put them into `pretrained/` folder:
 
 * [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing), [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
 
