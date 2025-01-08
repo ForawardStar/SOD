@@ -195,21 +195,9 @@ class SOD(nn.Module):
 
         self.aca = AdaptiveCrossAttention(64)
         self.metanet = MetaNet(self.aca.get_param_dict())
-
-
-
-        if arch == 'vgg16':
-            enc_channels=[64, 128, 256, 512, 512, 256, 256]#, 256, 256]
-        elif 'resnet50' in arch:
-            enc_channels=[64, 256, 512, 1024, 2048, 1024, 1024]
-            dec_channels=[32, 64, 256, 512, 512, 128, 128]
-        elif 'mobilenetv2' in arch:
-            enc_channels=[16, 24, 32, 96, 160, 40, 40]
-            dec_channels=[16, 24, 32, 40, 40, 40, 40]
-        elif 'p2t_small' in arch:
-            enc_channels=[64, 128, 320, 512, 256, 256]
-            dec_channels=[32, 64, 128, 256, 128, 128]
-        
+                     
+        enc_channels=[64, 128, 320, 512, 256, 256]
+        dec_channels=[32, 64, 128, 512, 128, 128]
 
         use_dwconv = 'mobilenet' in arch
         
