@@ -61,7 +61,7 @@ Before training, please first download the imagenet pretrained parameters, and p
 * [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing)
 * [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
 
-Besides the saliency maps, we also provide the bounding boxes and edge maps as the location and boundary supervisions, respectively. The bounding box ground truth is avaliable at /data/DUTS-TR/BoundingBox_DUTS-TR.txt of this repository.
+Besides the saliency maps, we also provide the bounding boxes and edge maps as the location and boundary supervisions, respectively. The bounding box ground truth is avaliable at `/data/DUTS-TR/BoundingBox_DUTS-TR.txt` of this repository, or you can directly downloaded from the link: .
 
 We have prepared a script to train our model:
 ```
