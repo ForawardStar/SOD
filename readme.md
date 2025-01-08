@@ -65,7 +65,7 @@ It is very simple to train our network. We have prepared a script to train our m
 bash ./scripts/train.sh
 ```
 
-To train our model, you need to change the params in `scripts/train.sh`. Please refer to the comments in the last part of `scripts/train.sh` for more details (very simple).
+To train our model, you need to change the params in `scripts/train.sh`. Please refer to the comments in the last part of `scripts/train.sh` for more details.
 
 ### Test
 
@@ -77,7 +77,7 @@ Download them from the following urls if you did not run `bash scripts/prepare_d
 
 #### Generate Saliency Maps
 
-After preparing the pretrained models, it is also very simple to generate saliency maps via EDN-VGG16/EDN-R50/EDN-Lite/EDN-LiteEX:
+After preparing the pretrained models, you can generate saliency maps via:
 
 ```
 bash ./tools/test.sh
@@ -85,15 +85,12 @@ bash ./tools/test.sh
 
 The scripts will automatically generate saliency maps on the `salmaps/` directory.
 
-* For computing Fbw, S-m, and E-m measures, please use the official MATLAB code to generate the results: [Download Code Here](https://github.com/yuhuan-wu/EDN/files/13497335/fbw-sm-em.zip).
-
 #### Pre-computed Saliency maps
 
 For covenience, we provide the pretrained saliency maps on several datasets by:
 
 * Running the command `bash scripts/prepare_salmaps.sh` to download them to `salmaps` folder.
 * Or downloading them manually: [[Google Drive]](https://drive.google.com/drive/folders/1MymUy-aZx_45YJSOPd3GQjwel-YBTUPX?usp=sharing), [[Baidu Pan, c9zm]](https://pan.baidu.com/s/1HAZTrJhIkw8JdACN_ChGWA?pwd=c9zm)
-* Now we have included all saliency maps of EDN varies, including EDN-VGG16, EDN-ResNet-50, **EDN-P2T-Small**, EDN-Lite, and EDN-LiteEX.
 
 #### Contact
 
