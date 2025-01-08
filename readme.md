@@ -31,7 +31,7 @@ Or, you can install the packages using requirement.txt, through running:
 ```
 bash scripts/prepare_data.sh
 ```
-The script will prepare the datasets, imagenet-pretrained models, and pretrained models of EDN/EDN-Lite. 
+The script will prepare the training and testing datasets. 
 If you suffer from slow downloading rate and luckily you have a proxy, a powerful tool [Proxychains4](https://github.com/rofl0r/proxychains-ng) can help you to execute the script through your own proxy by running the following command: `proxychains4 bash scripts/prepare_data.sh`.
 
 If you have a low downloading speed, please download the training data manually: 
