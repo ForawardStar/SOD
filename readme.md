@@ -53,7 +53,7 @@ We provide some examples for quick run:
 ````
 python demo.py
 ````
-The JPEG image files placed in the folder 'examples/' will be processed by our model, and the results will also be saved into the folder 'examples/' with the suffix '_Ours.png'.
+The JPEG image files placed in the folder 'examples/' will be processed by our model, and the results will also be saved into the folder 'examples/' with the suffix '_Ours.png'. Our trained model for inference have already saved in the folder "checkpoints/", and you can directly use it for inference.
 
 ## Train
 
