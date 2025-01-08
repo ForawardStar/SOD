@@ -76,7 +76,7 @@ if __name__ == '__main__':
     parser.add_argument('--height', type=int, default=384, help='Height of RGB image')
     parser.add_argument('--gpu', default=True, type=lambda x: (str(x).lower() == 'true'),
                         help='Run on CPU or GPU. If TRUE, then GPU')
-    parser.add_argument('--pretrained', default="pretrained/", help='Pretrained model')
+    parser.add_argument('--pretrained', default="checkpoints/", help='Pretrained model')
 
     args = parser.parse_args()
     print('Called with args:')
