@@ -57,7 +57,7 @@ python demo.py
 
 If you cannot run `bash scripts/prepare_data.sh`, please first download the imagenet pretrained models and put them to `pretrained` folder:
 
-* [[Google Drive]](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing), [[Baidu Pan,eae8]](https://pan.baidu.com/s/1xJNJ8SEDwKMHxlFh3yCUeQ?pwd=eae8)
+* [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing), [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
 
 
 It is very simple to train our network. We have prepared a script to train our model:
