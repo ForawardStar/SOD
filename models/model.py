@@ -15,7 +15,7 @@ except:
 class MyConv2D(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, stride=1):
         super(MyConv2D, self).__init__()
-        self.weight = torch.zeros((out_channels, in_channels, kernel_size, kernel_size)).cuda()
+        self.weight = torch.ones((out_channels, in_channels, kernel_size, kernel_size)).cuda()
         self.bias = torch.zeros(out_channels).cuda()
 
         self.in_channels = in_channels
@@ -37,10 +37,17 @@ class MetaNet(nn.Module):
         super(MetaNet, self).__init__()
         self.param_num = len(param_dict)
         self.hidden = nn.Linear(128, 64*self.param_num)
+        self.hidden.weight.data.fill_(1)
+        self.hidden.bias.data.fill_(0)
+
         self.fc_dict = {}
         for i, (name, params) in enumerate(param_dict.items()):
             self.fc_dict[name] = i
-            setattr(self, 'fc{}'.format(i+1), nn.Linear(64, params))
+            fc_noshare = nn.Linear(64, params)
+            fc_noshare.weight.data.fill_(1)
+            fc_noshare.bias.data.fill_(0)
+            setattr(self, 'fc{}'.format(i+1), fc_noshare)
+
 
     def forward(self, mean_features):
         hidden = F.relu(self.hidden(mean_features))
@@ -73,9 +80,9 @@ class AdaptiveCrossAttention(nn.Module):
         super(AdaptiveCrossAttention, self).__init__()
         hidden_dim = in_channels
         self.conv11 = nn.Conv2d(in_channels*2, in_channels, 1)
-        self.proj_q = MyConv2D(hidden_dim, hidden_dim, 4, stride=4)
-        self.proj_k = MyConv2D(hidden_dim, hidden_dim, 4, stride=4)
-        self.proj_v = MyConv2D(hidden_dim, hidden_dim, 4, stride=4)
+        self.proj_q = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 2, stride=2), nn.Conv2d(hidden_dim // 2, hidden_dim, 2, stride = 2))
+        self.proj_k = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 2, stride=2), nn.Conv2d(hidden_dim // 2, hidden_dim, 2, stride = 2))
+        self.proj_v = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 2, stride=2), nn.Conv2d(hidden_dim // 2, hidden_dim, 2, stride = 2))
 
         self.mlp = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim, 3, padding=1), nn.GELU())
 
