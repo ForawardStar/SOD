@@ -25,24 +25,7 @@ They can be installed following the instructions of the official website: https:
 Or, you can install the packages using requirement.txt, through running:
 ```pip install -r requirement.txt```
 
-## Training
-First, downloading the data from the link: https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing, or https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i
-
-Put the downloaded data into the "data/" folder, and then run train.sh to launch the training processs.
-
-### Run all steps quickly
-
-Simply run:
-
-```
-bash one-key-run.sh
-```
-
-It will download all data, evaluate all models, produce all saliency maps to `salmaps/` folder,  and train `EDN-Lite` automatically. 
-**Note that this script requires that you have a good downloading speed on GitHub.**
-
-
-### Data Preparing
+## Data Preparing
 
 **You can choose to use our automatic preparation script, if you have good downloading speed on github**:
 ```
@@ -61,6 +44,25 @@ After completion of downloading, extract the data and put them to `./data/` fold
 ```
 unzip SOD_datasets.zip -O ./data
 ```
+
+
+## Training
+First, downloading the data from the link: https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing, or https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i
+
+Put the downloaded data into the "data/" folder, and then run train.sh to launch the training processs.
+
+### Run all steps quickly
+
+Simply run:
+
+```
+bash one-key-run.sh
+```
+
+It will download all data, evaluate all models, produce all saliency maps to `salmaps/` folder,  and train `EDN-Lite` automatically. 
+**Note that this script requires that you have a good downloading speed on GitHub.**
+
+
 
 ### Demo
 
