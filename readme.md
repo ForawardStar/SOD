@@ -82,7 +82,7 @@ Download them from the following urls if you did not run `bash scripts/prepare_d
 After preparing the pretrained models, you can generate saliency maps via:
 
 ```
-bash ./tools/test.sh
+bash ./scripts/test.sh
 ```
 
 The scripts will automatically generate saliency maps on the `salmaps/` directory.
