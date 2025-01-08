@@ -53,6 +53,7 @@ We provide some examples for quick run:
 ````
 python demo.py
 ````
+The image files, say .jpg files, in the folder 'examples/', will be processed.
 
 ## Train
 
