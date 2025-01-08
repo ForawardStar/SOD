@@ -46,44 +46,26 @@ unzip SOD_datasets.zip -O ./data
 ```
 
 
-## Training
-First, downloading the data from the link: https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing, or https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i
-
-Put the downloaded data into the "data/" folder, and then run train.sh to launch the training processs.
-
-### Run all steps quickly
-
-Simply run:
-
-```
-bash one-key-run.sh
-```
-
-It will download all data, evaluate all models, produce all saliency maps to `salmaps/` folder,  and train `EDN-Lite` automatically. 
-**Note that this script requires that you have a good downloading speed on GitHub.**
-
-
-
-### Demo
+## Demo
 
 We provide some examples for quick run:
 ````
 python demo.py
 ````
 
-### Train
+## Train
 
 If you cannot run `bash scripts/prepare_data.sh`, please first download the imagenet pretrained models and put them to `pretrained` folder:
 
 * [[Google Drive]](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing), [[Baidu Pan,eae8]](https://pan.baidu.com/s/1xJNJ8SEDwKMHxlFh3yCUeQ?pwd=eae8)
 
 
-It is very simple to train our network. We have prepared a script to train EDN-Lite:
+It is very simple to train our network. We have prepared a script to train our model:
 ```
 bash ./scripts/train.sh
 ```
 
-To train EDN-VGG16 or EDN-R50, you need to change the params in `scripts/train.sh`. Please refer to the comments in the last part of `scripts/train.sh` for more details (very simple).
+To train our model, you need to change the params in `scripts/train.sh`. Please refer to the comments in the last part of `scripts/train.sh` for more details (very simple).
 
 ### Test
 
