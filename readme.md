@@ -3,7 +3,12 @@
 Salient object detection aims to identify objects in natural images that most catch human attention. A common approach in this field involves integrating diverse features learned from multiple network branches. Intuitively, to enhance accuracy, the fusion process shall adapt to individual inputs with varying patterns. To improve such adaptability, this project develops a boundary-location information fusion framework. Specifically, we decompose the original problem into two simplified sub-tasks: object localization and boundary refinement, each tackled by a dedicated branch. To mitigate the negative impact of misleading attributions in the feature space, we further propose an adaptive feature augmentation technique, which dynamically pinpoints potential attributions causing incorrect predictions, thereby enhancing robustness. Additionally, an adaptive cross-attention module is devised with parameters that adjust dynamically to effectively aggregate boundary and location features. 
 
 ## Environment Installation
-Our model is based on Pytorch, which can be installed following the instructions of the official website: https://pytorch.org/
+Our model is based on the following packages:
+* python 3.6+
+* pytorch >=1.6, torchvision, OpenCV-Python, tqdm
+* Tested on pyTorch 1.7.1
+
+They can be installed following the instructions of the official website: https://pytorch.org/
 
 Or, you can install the packages using requirement.txt, through running:
 ```pip install -r requirement.txt```
@@ -12,35 +17,16 @@ Or, you can install the packages using requirement.txt, through running:
 First, downloading the data from the link: https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing, or https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i
 
 Put the downloaded data into the "data/" folder, and then run train.sh to launch the training processs.
-# EDN
-
-[IEEE TIP 2022, EDN: Salient Object Detection via Extremely-Downsampled Network](https://arxiv.org/abs/2012.13093)
-
-中文版下载地址：[中文版](https://mmcheng.net/wp-content/uploads/2022/06/21TIP_EDN_CN.pdf)
 
 If you run into any problems or feel any difficulties to run this code, do not hesitate to leave issues in this repository.
 
-My e-mail is: wuyuhuan @ mail.nankai (dot) edu.cn
-
-:fire: News! We updated the code with [P2T](https://arxiv.org/abs/2106.12011) transformer bacbone. It achieves much higher result than the original EDN with ResNet-50! you can download the [saliency maps](https://github.com/yuhuan-wu/EDN/releases/download/v1.0/EDN-P2T-S.zip) and [pretrained model](https://github.com/yuhuan-wu/EDN/releases/download/v1.0/EDN-P2T-S.pth) from github release of this repository.
+My e-mail is: yuanbinfu@tju.edu.cn
 
 This repository contains:
 
 - [x] Full code, data for `training` and `testing`
-- [x] Pretrained models based on VGG16, ResNet-50, [P2T-Small](https://arxiv.org/abs/2106.12011) and MobileNetV2
+- [x] Pretrained models based on [P2T](https://arxiv.org/abs/2106.12011) and MobileNetV2
 - [x] Fast preparation script (based on github release)
-
-### Requirements
-
-* python 3.6+
-* pytorch >=1.6, torchvision, OpenCV-Python, tqdm
-* Tested on pyTorch 1.7.1
-
-Simply using:
-````
-pip install -r requirements.txt
-````
-to install all requirements.
 
 ### Run all steps quickly
 
