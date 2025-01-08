@@ -10,3 +10,5 @@ Or, you can install the packages using requirement.txt, through running:
 
 ## Training
 First, downloading the data from the link: https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing, or https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i
+
+Put the downloaded data into the "data/" folder, and then run train.sh to launch the training processs.
