@@ -58,7 +58,8 @@ python demo.py
 
 Before training, please first download the imagenet pretrained parameters, and put them into `pretrained/` folder:
 
-* [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing), [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
+* [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing)
+* [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
 
 
 We have prepared a script to train our model:
