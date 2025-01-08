@@ -36,7 +36,7 @@ If you suffer from slow downloading rate and luckily you have a proxy, a powerfu
 
 If you have a low downloading speed, please download the training data manually: 
 
-* Preprocessed data of 6 datasets: [[Google Drive]](https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing), [[Baidu Pan, ew9i]](https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i)
+* Preprocessed data of 5 datasets: [[Google Drive]](https://drive.google.com/file/d/1fj1KoLa8uOBmGMkpKkjj7xVHciSd8_4V/view?usp=sharing), [[Baidu Pan, ew9i]](https://pan.baidu.com/s/1tNGQS9SjFu9hm0a0svnlvg?pwd=ew9i)
 
 We have processed the data well so you can use them without any preprocessing steps. 
 After completion of downloading, extract the data and put them to `./data/` folder:
