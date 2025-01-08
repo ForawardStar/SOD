@@ -89,7 +89,7 @@ The scripts will automatically generate saliency maps on the `salmaps/` director
 
 #### Pre-computed Saliency maps
 
-For covenience, we provide the pretrained saliency maps on several datasets by:
+For covenience, we provide the pre-computed saliency maps on several datasets by:
 
 * Running the command `bash scripts/prepare_salmaps.sh` to download them to `salmaps` folder.
 * Or downloading them manually: [[Google Drive]](https://drive.google.com/drive/folders/1MymUy-aZx_45YJSOPd3GQjwel-YBTUPX?usp=sharing), [[Baidu Pan, c9zm]](https://pan.baidu.com/s/1HAZTrJhIkw8JdACN_ChGWA?pwd=c9zm)
