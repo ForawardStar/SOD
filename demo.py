@@ -39,7 +39,7 @@ def test(args, model, image_list):
         img_out = F.interpolate(img_out, size=image.shape[:2], mode='bilinear', align_corners=False)
 
         sal_map = (img_out*255).data.cpu().numpy()[0, 0].astype(np.uint8)
-        cv2.imwrite(image_list[idx].replace(".jpg", "_edn.png"), sal_map)
+        cv2.imwrite(image_list[idx].replace(".jpg", "_Ours.png"), sal_map)
 
 
  
@@ -47,13 +47,11 @@ def main(args, example_dir="examples/"):
     # read all the images in the example folder
     image_list = glob.glob("{}*.jpg".format(example_dir))
 
-    model = net.EDN(arch=args.arch)
+    model = net.SOD(arch=args.arch)
     
     if not osp.isfile(args.pretrained):
         print('Pre-trained model file does not exist...')
-        print("start to download the pretrained model!")
-        os.system("wget -c https://github.com/yuhuan-wu/EDN/releases/download/v1.0/EDN-VGG16.pth -O pretrained/EDN-VGG16.pth")
-    
+        
     state_dict = torch.load(args.pretrained)
     new_keys = []
     new_values = []
@@ -72,13 +70,13 @@ def main(args, example_dir="examples/"):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--arch', default='vgg16', help='the backbone name of EDN, vgg16, resnet50, or mobilenetv2')
+    parser.add_argument('--arch', default='vgg16', help='the backbone name of p2t, or mobilenetv2')
     parser.add_argument('--example_dir', default="examples/", help='Data directory')
     parser.add_argument('--width', type=int, default=384, help='Width of RGB image')
     parser.add_argument('--height', type=int, default=384, help='Height of RGB image')
     parser.add_argument('--gpu', default=True, type=lambda x: (str(x).lower() == 'true'),
                         help='Run on CPU or GPU. If TRUE, then GPU')
-    parser.add_argument('--pretrained', default="pretrained/EDN-VGG16.pth", help='Pretrained model')
+    parser.add_argument('--pretrained', default="pretrained/", help='Pretrained model')
 
     args = parser.parse_args()
     print('Called with args:')
