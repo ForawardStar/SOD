@@ -75,7 +75,7 @@ class AdaptiveCrossAttention(nn.Module):
         super(AdaptiveCrossAttention, self).__init__()
         hidden_dim = in_channels
         self.conv11 = nn.Conv2d(in_channels*2, in_channels, 1)
-        self.proj_q = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 1, stride=1), nn.Conv2d(hidden_dim // 2, hidden_dim, 4, stride = 4)
+        self.proj_q = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 1, stride=1), nn.Conv2d(hidden_dim // 2, hidden_dim, 4, stride = 4))
         self.proj_k = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 1, stride=1), nn.Conv2d(hidden_dim // 2, hidden_dim, 4, stride = 4))
         self.proj_v = nn.Sequential(nn.Conv2d(hidden_dim, hidden_dim // 2, 4, stride = 4), MyConv2D(hidden_dim // 2, hidden_dim // 2, 1, stride=1), nn.Conv2d(hidden_dim // 2, hidden_dim, 4, stride = 4))
 
