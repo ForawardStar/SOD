@@ -277,9 +277,7 @@ def train_validate_saliency(args):
     valLoader4 = torch.utils.data.DataLoader(
         Dataset(args.data_dir, [val_names[4]], transform=valDataset),
         batch_size=12, shuffle=False, num_workers=args.num_workers, pin_memory=False)
-    valLoader5 = torch.utils.data.DataLoader(
-        Dataset(args.data_dir, [val_names[5]], transform=valDataset),
-        batch_size=12, shuffle=False, num_workers=args.num_workers, pin_memory=False)        
+     
     if args.ms:
         max_batches = len(trainLoader_main) + len(trainLoader_scale1) + len(trainLoader_scale2)
     else:
@@ -353,13 +351,12 @@ def train_validate_saliency(args):
     F_beta_val2s = []
     F_beta_val3s = []
     F_beta_val4s = []
-    F_beta_val5s = []
+    
     MAE_vals = []
     MAE_val1s = []
     MAE_val2s = []
     MAE_val3s = []
     MAE_val4s = []
-    MAE_val5s = []
 
     for epoch in range(start_epoch, args.max_epochs):
         # train for one epoch
@@ -390,20 +387,19 @@ def train_validate_saliency(args):
             loss_val3, F_beta_val3, MAE_val3 = val(args, valLoader3, model, criteria)
             torch.cuda.empty_cache()
             loss_val4, F_beta_val4, MAE_val4 = val(args, valLoader4, model, criteria)
-            torch.cuda.empty_cache()
-            loss_val5, F_beta_val5, MAE_val5 = val(args, valLoader5, model, criteria)
+
             F_beta_vals.append(F_beta_val)
             F_beta_val1s.append(F_beta_val1)
             F_beta_val2s.append(F_beta_val2)
             F_beta_val3s.append(F_beta_val3)
             F_beta_val4s.append(F_beta_val4)
-            F_beta_val5s.append(F_beta_val5)
+
             MAE_vals.append(MAE_val)
             MAE_val1s.append(MAE_val1)
             MAE_val2s.append(MAE_val2)
             MAE_val3s.append(MAE_val3)
             MAE_val4s.append(MAE_val4)
-            MAE_val5s.append(MAE_val5)
+
             epoch_idxes.append(epoch+1)
 
         
@@ -428,8 +424,8 @@ def train_validate_saliency(args):
         
         log_str = "\n{} {:.4f} {:.4f}".format(epoch+1, F_beta_val, MAE_val)
         try:
-            log_str = log_str + " {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}".format(
-                F_beta_val1, MAE_val1, F_beta_val2, MAE_val2, F_beta_val3, MAE_val3, F_beta_val4, MAE_val4, F_beta_val5, MAE_val5)
+            log_str = log_str + " {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f} {:.4f}".format(
+                F_beta_val1, MAE_val1, F_beta_val2, MAE_val2, F_beta_val3, MAE_val3, F_beta_val4, MAE_val4)
         except:
             pass
         logger.write(log_str)
