@@ -60,7 +60,7 @@ Before training, please first download the imagenet pretrained parameters, and p
 * [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing), [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
 
 
-It is very simple to train our network. We have prepared a script to train our model:
+We have prepared a script to train our model:
 ```
 bash ./scripts/train.sh
 ```
