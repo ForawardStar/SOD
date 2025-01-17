@@ -58,12 +58,6 @@ The JPEG image files placed in the folder 'examples/' will be processed by our m
 
 ### Test
 
-#### Pretrained Models
-
-Download them from the following urls if you did not run `bash scripts/prepare_data.sh` to prepare the data:
-
-* [[Google Drive]](https://drive.google.com/drive/folders/1Un6trEOTIVza2wH5Q2PAQVNGgsKEEHv4?usp=sharing), [[Baidu Pan,eae8]](https://pan.baidu.com/s/1xJNJ8SEDwKMHxlFh3yCUeQ?pwd=eae8)
-
 #### Generate Saliency Maps
 
 After preparing the pretrained models, you can generate saliency maps via:
