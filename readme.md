@@ -56,17 +56,6 @@ python demo.py
 ````
 The JPEG image files placed in the folder 'examples/' will be processed by our model, and the results will also be saved into the folder 'examples/' with the suffix '_Ours.png'. 
 
-### Test
-
-#### Generate Saliency Maps
-
-After preparing the pretrained models, you can generate saliency maps via:
-
-```
-bash ./scripts/test.sh
-```
-
-The scripts will automatically generate saliency maps on the `salmaps/` directory.
 
 #### Contact
 
