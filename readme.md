@@ -4,7 +4,7 @@ Salient object detection aims to identify objects in natural images that most ca
 
 ---
 
-If you run into any problems or feel any difficulties to run this code, do not hesitate to leave issues in this repository.
+If you run into any problems or feel any difficulties to run this code, do not hesitate to leave issues in this repository. We will release the training codes once the paper has been published.
 
 My e-mail is: yuanbinfu@tju.edu.cn
 
@@ -56,23 +56,6 @@ python demo.py
 ````
 The JPEG image files placed in the folder 'examples/' will be processed by our model, and the results will also be saved into the folder 'examples/' with the suffix '_Ours.png'. 
 
-
-## Train
-
-Before training, please first download the imagenet pretrained parameters, and put them into `pretrained/` folder:
-
-* [CNN model](https://drive.google.com/drive/folders/1ios0nOHQt61vsmu-pdkpS1zBb_CwLrmk?usp=sharing)
-* [Transformer model (P2T)](https://github.com/yuhuan-wu/P2T)
-
-Besides the saliency maps, we also provide the bounding boxes and edge maps as the location and boundary supervisions, respectively. The bounding box ground truth is avaliable at `/data/DUTS-TR/BoundingBox_DUTS-TR.txt` of this repository, or you can directly downloaded both the location and boundary ground truths from the link: https://github.com/ForawardStar/SOD-Files/blob/main/AuxiliarySupervision.zip.
-
-We have prepared a script to train our model:
-```
-bash ./scripts/train.sh
-```
-
-To train our model, you need to change the params in `scripts/train.sh`. Please refer to the comments in the last part of `scripts/train.sh` for more details.
-
 ### Test
 
 #### Pretrained Models
@@ -90,13 +73,6 @@ bash ./scripts/test.sh
 ```
 
 The scripts will automatically generate saliency maps on the `salmaps/` directory.
-
-#### Pre-computed Saliency maps
-
-For covenience, we provide the pre-computed saliency maps on several datasets by:
-
-* Running the command `bash scripts/prepare_salmaps.sh` to download them to `salmaps` folder.
-* Or downloading them manually: [[Google Drive]](https://drive.google.com/drive/folders/1MymUy-aZx_45YJSOPd3GQjwel-YBTUPX?usp=sharing), [[Baidu Pan, c9zm]](https://pan.baidu.com/s/1HAZTrJhIkw8JdACN_ChGWA?pwd=c9zm)
 
 #### Contact
 
