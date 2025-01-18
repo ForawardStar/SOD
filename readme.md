@@ -61,7 +61,7 @@ The JPEG image files placed in the folder 'examples/' will be processed by our m
 
 ## Acknowledgment
 
-Our codes are built upon https://github.com/yuhuan-wu/EDN/
+Our code is based on https://github.com/yuhuan-wu/EDN/
 
 #### Contact
 
