@@ -50,6 +50,11 @@ unzip SOD_datasets.zip -O ./data
 ## Demo
 
 We provide some examples for quick inference. You should download our trained model from：https://pan.quark.cn/s/c4a28f09b1f2, and put it into the folder "checkpoints/".
+
+
+## Acknowledgment
+
+Our codes are built upon https://github.com/yuhuan-wu/EDN/
  Then, you can simply run:
 ````
 python demo.py
