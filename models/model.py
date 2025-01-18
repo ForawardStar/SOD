@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
+import random
 from collections import defaultdict
 from models.utils import ConvBNReLU, ReceptiveConv, mean_pooling
 from models.vgg import vgg16
