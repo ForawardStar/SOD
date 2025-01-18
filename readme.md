@@ -63,7 +63,7 @@ The JPEG image files placed in the folder 'examples/' will be processed by our m
 
 Our code is based on https://github.com/yuhuan-wu/EDN/
 
-#### Contact
+## Contact
 
 * I encourage everyone to contact me via my e-mail. My e-mail is: yuanbinfu@tju.edu.cn
 
