@@ -68,8 +68,13 @@ class AdaptiveFeatureAugmentation(nn.Module):
         attributions = self.AttributionPredictor(x)
         thresholds = self.ThresholdPredictor(x)
 
-        return 0.5 * attributions * (1 + F.tanh(self.alpha * (attributions - thresholds)))
+        attributions_thresholding = 0.5 * attributions * (1 + F.tanh(self.alpha * (attributions - thresholds)))
 
+        aug1 = self.processor(x + random.gauss(0, 1) * attributions_thresholding)
+        aug2 = self.processor(x + random.gauss(0, 1) * attributions_thresholding)
+        aug3 = self.processor(x + random.gauss(0, 1) * attributions_thresholding)
+
+        return aug1 * 0.33 + aug2 * 0.33 + aug3 * 0.33
 class AdaptiveCrossAttention(nn.Module):
     def __init__(self, in_channels):
         super(AdaptiveCrossAttention, self).__init__()
