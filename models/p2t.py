@@ -320,10 +320,6 @@ def p2t_tiny(pretrained=True, **kwargs):
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 2, 6, 3],
         **kwargs)
     model.default_cfg = _cfg()
-    if pretrained:
-        weights = torch.load("pretrained/p2t_tiny.pth")
-        model.load_state_dict(weights, strict=True)
-        print("loaded p2t-tiny imagenet pretrained weights")
 
     return model
 
@@ -333,10 +329,7 @@ def p2t_small(pretrained=True, **kwargs):
         patch_size=4, embed_dims=[64, 128, 320, 512], num_heads=[1, 2, 5, 8], mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
         norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 2, 9, 3], **kwargs)
     model.default_cfg = _cfg()
-    if pretrained:
-        weights = torch.load("pretrained/p2t_small.pth")
-        model.load_state_dict(weights, strict=True)
-        print("loaded p2t-small imagenet pretrained weights")
+
 
 
     return model
