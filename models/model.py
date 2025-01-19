@@ -8,10 +8,7 @@ from models.utils import ConvBNReLU, ReceptiveConv, mean_pooling
 from models.vgg import vgg16
 from models.resnet import resnet50, resnet101, resnet152, Bottleneck
 from models.MobileNetV2 import mobilenetv2
-try:
-    from models.p2t import p2t_tiny, p2t_small
-except:
-    print(" code is not loaded, please check the installation of PyTorch>=1.7, timm>=0.3.2!")
+from models.p2t import p2t_tiny, p2t_small
 
 class MyConv2D(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, stride=1):
