@@ -273,7 +273,6 @@ class SOD(nn.Module):
         features_concat_p2t = torch.cat([backbone_features_p2t[0], F.interpolate(backbone_features_p2t[1], size=(size_p2t, size_p2t), mode='bilinear'), F.interpolate(backbone_features_p2t[2], size=(size_p2t, size_p2t), mode='bilinear'), F.interpolate(backbone_features_p2t[3], size=(size_p2t, size_p2t), mode='bilinear')], dim=1)
 
         
-        #features_concat = self.afa_mobile(self.conv11_mobile(features_concat_mobile)) + F.interpolate(self.afa_p2t(self.conv11_p2t(features_concat_p2t)), size=(size_mobile, size_mobile), mode='bilinear')
         features_mobile = self.conv11_mobile(features_concat_mobile)
         features_p2t = self.conv11_p2t(features_concat_p2t)
         features_mean_pooling = mean_pooling([features_mobile, features_p2t])
