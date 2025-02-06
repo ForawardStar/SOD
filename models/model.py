@@ -279,6 +279,8 @@ class SOD(nn.Module):
         params = self.metanet(features_mean_pooling)
         self.aca.set_weights(params, 0)
         features_concat = self.aca(F.interpolate(self.afa_mobile(features_mobile), size=(int(size_p2t / 2), int(size_p2t / 2))), F.interpolate(self.afa_p2t(features_p2t), size=(int(size_p2t / 2), int(size_p2t / 2))))
+        
+        # Saliency Prediction Head
         ed1 = self.conv6(features_concat)
         ed2 = self.conv7(ed1)
         attention = torch.sigmoid(self.gap(ed2))
